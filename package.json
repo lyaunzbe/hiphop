@@ -1,0 +1,27 @@
+{
+  "name": "hiphop",
+  "version": "0.0.0",
+  "description": "A javascript hiphop factory. Powered by Rap Genius.",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "tap ./test/*.js"
+  },
+  "dependencies": {
+    "async": "~0.2.8",
+    "tape": "~1.0.2",
+    "trumpet": "~0.3.3",
+    "cork": "0.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lyaunzbe/hiphop.git"
+  },
+  "keywords": [
+    "rapgenius",
+    "hiphop",
+    "rap",
+    "usher"
+  ],
+  "author": "Ben Lyaunzon",
+  "license": "MIT"
+}
