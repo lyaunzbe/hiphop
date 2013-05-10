@@ -15,41 +15,53 @@ var test = require('tape'),
 /**
  * Mic check 1..2..1..2
  */
-var Usher = hiphop.mc('Usher');
+var showtime = function(err, rapper){
+
+	Usher = rapper;
+
+
+	async.auto({
+		jams: function (callback) {
+			// Usher.jams(callback);
+			callback(null,null);
+		},
+
+		songs: function (callback) {
+			// Usher.songs(callback);
+			callback(null,null);
+
+		},
+
+		song: function (callback) {
+			// Usher.song('Confessions', callback);
+			callback(null,null);
+
+		},
+
+		test: ['jams', 'songs', 'song', 'lyrics', function (callback, obj) {
+			console.log(obj);
+
+			test('Rapper', function (t) {
+
+			});
+
+			test('Jams', function (t) {
+
+			});
+
+			test('Songs', function (t) {
+
+			});
+
+			test('Song', function (t) {
+
+			});
+		}]
+	});
+}
 
 /**
  * Drop the beat!
  */
-async.auto({
-	jams: function (callback) {
-		Usher.jams(callback);
-	},
-
-	songs: function (callback) {
-		Usher.songs(callback);
-	}
-
-	song: function (callback) {
-		Usher.song('Confessions', callback);
-	}
-
-	test: ['jams', 'songs', 'song', 'lyrics', function (callback, obj) {
-		test('Rapper', function (t) {
-
-		});
-
-		test('Jams', function (t) {
-
-		});
-
-		test('Songs', function (t) {
-
-		});
-
-		test('Song', function (t) {
-
-		});
-	}]
-
-});
+hiphop.mc('Usher', showtime);
 

@@ -4,7 +4,7 @@
   "description": "A javascript hiphop factory. Powered by Rap Genius.",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "tap ./test/*.js"
+    "test": "node ./test/*.js"
   },
   "dependencies": {
     "async": "~0.2.8",
