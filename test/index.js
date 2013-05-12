@@ -10,59 +10,62 @@
  */
 var test = require('tape'),
 	async = require('async'),
-	hiphop = require(__dirname+'/../lib/index.js');
+	Hiphop = require(__dirname+'/../lib/index.js');
 
 /**
  * Mic check 1..2..1..2
  */
-var showtime = function(err, rapper){
+// var showtime = function(err, rapper){
 
-	console.log(rapper);
-	Usher = rapper;
+// 	Usher = rapper;
 
+// 	async.auto({
+// 		jams: function (callback) {
+// 			// Usher.jams(callback);
+// 			callback(null,null);
+// 		},
 
-	async.auto({
-		jams: function (callback) {
-			// Usher.jams(callback);
-			callback(null,null);
-		},
+// 		songs: function (callback) {
+// 			// Usher.songs(callback);
+// 			callback(null,null);
 
-		songs: function (callback) {
-			// Usher.songs(callback);
-			callback(null,null);
+// 		},
 
-		},
+// 		song: function (callback) {
+// 			// Usher.song('Confessions', callback);
+// 			callback(null,null);
 
-		song: function (callback) {
-			// Usher.song('Confessions', callback);
-			callback(null,null);
+// 		},
 
-		},
+// 		test: ['jams', 'songs', 'song', 'lyrics', function (callback, obj) {
+// 			console.log(obj);
 
-		test: ['jams', 'songs', 'song', 'lyrics', function (callback, obj) {
-			console.log(obj);
+// 			test('Rapper', function (t) {
 
-			test('Rapper', function (t) {
+// 			});
 
-			});
+// 			test('Jams', function (t) {
 
-			test('Jams', function (t) {
+// 			});
 
-			});
+// 			test('Songs', function (t) {
 
-			test('Songs', function (t) {
+// 			});
 
-			});
+// 			test('Song', function (t) {
 
-			test('Song', function (t) {
+// 			});
+// 		}]
+// 	});
+// }
 
-			});
-		}]
-	});
-}
+// /**
+//  * Drop the beat!
+//  */
+// hiphop.mc('Usher', showtime);
 
-/**
- * Drop the beat!
- */
-hiphop.mc('Usher', showtime);
-
+var Usher = new Hiphop('Usher');
+Usher.showtime(function(err, usher){
+	if(err) console.log(err);
+	// console.log(usher);
+})
