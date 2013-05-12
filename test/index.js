@@ -17,6 +17,7 @@ var test = require('tape'),
  */
 var showtime = function(err, rapper){
 
+	console.log(rapper);
 	Usher = rapper;
 
 

@@ -9,8 +9,10 @@
   "dependencies": {
     "async": "~0.2.8",
     "tape": "~1.0.2",
-    "trumpet": "~0.3.3",
-    "cork": "0.0.1"
+    "cork": "0.0.1",
+    "htmlparser2": "~3.0.5",
+    "lodash": "~1.2.1",
+    "cheerio": "~0.11.0"
   },
   "repository": {
     "type": "git",
