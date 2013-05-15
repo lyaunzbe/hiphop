@@ -61,11 +61,11 @@ var test = require('tape'),
 
 // /**
 //  * Drop the beat!
-//  */
+//  */	
 // hiphop.mc('Usher', showtime);
 
-var Usher = new Hiphop('Usher');
-Usher.showtime(function(err, usher){
+var hiphop = new Hiphop('Usher');
+hiphop.showtime(function(err, usher){
 	if(err) console.log(err);
-	// console.log(usher);
+	console.log(usher);
 })
