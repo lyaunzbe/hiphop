@@ -1,5 +1,5 @@
 /**
- * Tests
+			t.pass( * Tests
  *
  * @package hiphop
  * @author Ben Lyaunzon
@@ -13,7 +13,7 @@ var test = require('tape'),
 	Hiphop = require(__dirname+'/../lib/index.js');
 
 /**
- * Functional tests for the Hiphop object.
+ * Functional tests for the Hiphop class.
  * 
  * Hiphop
  *  - init
@@ -22,9 +22,12 @@ var test = require('tape'),
  *  - add
  *  - rm
  */
+
+var begin = Date.now();
+
 async.auto({
 	init : function (callback) {
-		callback(null, new Hiphop(['Usher', 'Wu-Tang Clan']));
+		callback(null, new Hiphop(['Masta Ace', 'Wu-Tang Clan']));
 	},
 
 	showtime : ['init', function (callback, obj) {
@@ -39,11 +42,7 @@ async.auto({
 	add : ['showtime', function (callback, obj) {
 		var hiphop = obj.init;
 
-		hiphop.add('Rakim', function(err, rapper){
-			if(err) callback(err);
-			callback(null, rapper);
-		});
-		
+		callback(null, hiphop.add('Rakim'));
 	}],
 
 	rm :  ['add', function (callback, obj) {
@@ -64,7 +63,7 @@ async.auto({
 			showtime = obj.showtime,
 			add      = obj.add,
 			rm       = obj.rm,
-			roster   = obj.roser;
+			roster   = obj.roster;
 
 		test('Module definition', function (t) {
 			t.ok(hiphop, 'hiphop should be valid');
@@ -80,68 +79,37 @@ async.auto({
 			t.ok(showtime, 'showtime should be valid');
 			t.ok(Array.isArray(showtime), 'showtime should be an array');
 			t.equal(showtime.length, 2, 'showtime should contain two items');
-			t.equal(typeof showtime.pop(), 'object', 'showtime contains objects');
+			showtime.forEach(function(rapper){
+				t.equal(typeof rapper, 'object', rapper.name +' is a Rapper object');
+			});
 			t.end();
 		});
 
 		test('Add', function (t) {
-
+			t.ok(add, 'add should be valid');
+			t.ok(Array.isArray(add), 'add should be an array representing the roster list');
+			t.equal(add.length, 3, 'the roster list should now contain three rappers');
+			t.equal(add.pop(), 'Rakim', 'ensure that the appropriate rapper was really added');
+			t.end();
 		});
 
 		test('Remove', function (t) {
-
+			t.ok(rm, 'rm should be valid');
+			t.equal(typeof rm, 'object', 'rm is a Rapper object');
+			t.equal(rm.name, 'Wu-Tang Clan', 'ensure that the appropriate rapper was removed');
+			t.end();
 		});
 
 		test('Roster', function (t) {
+			t.ok(roster, 'roster should be valid');
+			t.ok(Array.isArray(roster), 'roster should be an array representing the roster list');
+			t.equal(typeof roster[0], 'string', 'roster should contain strings of rapper names');
+			t.equal(roster.length, 2, 'the roster list should now contain two rappers');
+			t.pass('Tests completed in '+ ((Date.now()-begin)/1000)+' seconds.');
+
+			t.end();
 
 		});
+
 	}]
-
-})
-/**
- * Mic check 1..2..1..2
- */
-// var showtime = function(err, rapper){
-
-// 	Usher = rapper;
-
-// 	async.auto({
-// 		jams: function (callback) {
-// 			// Usher.jams(callback);
-// 			callback(null,null);
-// 		},
-
-// 		songs: function (callback) {
-// 			// Usher.songs(callback);
-// 			callback(null,null);
-
-// 		},
-
-// 		song: function (callback) {
-// 			// Usher.song('Confessions', callback);
-// 			callback(null,null);
-
-// 		},
-
-// 		test: ['jams', 'songs', 'song', 'lyrics', function (callback, obj) {
-// 			console.log(obj);
-
-// 			test('Rapper', function (t) {
-
-// 			});
-
-// 			test('Jams', function (t) {
-
-// 			});
-
-// 			test('Songs', function (t) {
-
-// 			});
-
-// 			test('Song', function (t) {
-
-// 			});
-// 		}]
-// 	});
-// }
-
+});	
