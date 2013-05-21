@@ -5,13 +5,23 @@ Create your very own rapper! Powered by Rap Genius
 
 ## example
 
+# Hiphop
+
+## h.getRoster()
+
+## h.showtime([artists], callback)
+
+## h.add(artists, [callback])
+
+## h.rm(artists)
+
 # Rapper
 
 ## r.about()
 
-## r.songs([songs])
+## r.songs()
 
-## r.song(song, cb)
+## r.getSong(songs, cb)
 
 ## r.jams()
 
