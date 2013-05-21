@@ -1,6 +1,5 @@
 /**
-			t.pass( * Tests
- *
+ * Hiphop Model
  * @package hiphop
  * @author Ben Lyaunzon
  */
@@ -13,7 +12,7 @@ var test = require('tape'),
 	Hiphop = require(__dirname+'/../lib/index.js');
 
 /**
- * Functional tests for the Hiphop class.
+ * Unit tests for the Hiphop model.
  * 
  * Hiphop
  *  - init
@@ -65,7 +64,7 @@ async.auto({
 			rm       = obj.rm,
 			roster   = obj.roster;
 
-		test('Module definition', function (t) {
+		test('Model definition', function (t) {
 			t.ok(hiphop, 'hiphop should be valid');
 			t.equal(typeof hiphop, 'object', 'Module should be an object');
 			t.equal(typeof hiphop.showtime, 'function', 'Method should be a function');
@@ -105,11 +104,10 @@ async.auto({
 			t.ok(Array.isArray(roster), 'roster should be an array representing the roster list');
 			t.equal(typeof roster[0], 'string', 'roster should contain strings of rapper names');
 			t.equal(roster.length, 2, 'the roster list should now contain two rappers');
-			t.pass('Tests completed in '+ ((Date.now()-begin)/1000)+' seconds.');
-
 			t.end();
-
 		});
+
+		// console.log('Tests completed in '+ ((Date.now()-begin)/1000)+' seconds.');
 
 	}]
 });	
