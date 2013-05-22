@@ -4,7 +4,7 @@
   "description": "A javascript hiphop factory. Powered by Rap Genius.",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "node ./test/*.js"
+    "test": "tap ./test/*.js"
   },
   "dependencies": {
     "async": "~0.2.8",
@@ -14,7 +14,10 @@
     "cheerio": "~0.11.0"
   },
   "devDependencies": {
-    "tap": "latest"
+    "tap": "latest",
+    "grunt": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-watch": "latest"
   },
   "repository": {
     "type": "git",

@@ -7,7 +7,7 @@
 /**
  * Dependencies
  */
-var test = require('tape'),
+var test = require('tap').test,
 	async = require('async'),
 	Hiphop = require(__dirname+'/../lib/index.js');
 
