@@ -7,9 +7,9 @@
 /**
  * Dependencies
  */
-var test = require('tap').test,
-	async = require('async'),
-	Hiphop = require(__dirname+'/../lib/index.js');
+var test   = require('tap').test,
+	async  = require('async'),
+	Hiphop = require(__dirname + '/../lib/index.js');
 
 /**
  * Unit tests for the Hiphop model.

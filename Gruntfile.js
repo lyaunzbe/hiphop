@@ -23,8 +23,10 @@ module.exports = function(grunt) {
         boss: true,
         eqnull: true,
         globals: {
-          "require": true
-        }
+          "require": true,
+          "module" : true
+        },
+        reporter: 'checkstyle'
       },
       gruntfile: {
         src: 'Gruntfile.js'

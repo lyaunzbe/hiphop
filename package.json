@@ -9,7 +9,6 @@
   "dependencies": {
     "async": "~0.2.8",
     "cork": "0.0.1",
-    "htmlparser2": "~3.0.5",
     "lodash": "~1.2.1",
     "cheerio": "~0.11.0"
   },
