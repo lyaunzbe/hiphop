@@ -68,11 +68,17 @@ async.auto({
 
 	}],
 
-	getSong : ['showtime', function (callback, obj) {
+	search : ['showtime', function (callback, obj) {
 		var doom = obj.showtime;
 
-		callback(null, null);
+		callback(null, doom.search('Beef Rap'));
 
+	}],
+
+	getSong : ['search', function(callback, obj){
+		var doom = obj.showtime,
+				song = obj.findSong[0];
+		callback(null)
 	}],
 
 	getAlbum : ['showtime', function (callback, obj) {
@@ -88,9 +94,10 @@ async.auto({
 			songs    = obj.songs,
 			jams     = obj.jams,
 			albums   = obj.albums,
-			Beef_Rap = obj.getSong,
+			search = obj.search,
 			MM_Food  = obj.getAlbum;
 
+			console.log(Beef_Rap);
 		test('Model definition', function (t) {
 			t.ok(mf_doom, 'MF Doom should be valid');
 			t.equal(typeof mf_doom, 'object', 'MF Doom should be an object');
@@ -125,8 +132,8 @@ async.auto({
 			t.end();
 		});
 
-		test('Song', function (t) {
-			t.ok(Beef_Rap, 'the song should be valid');
+		test('Search', function (t) {
+			t.ok(Search, 'the search results should be valid');
 			t.end();
 
 		});
