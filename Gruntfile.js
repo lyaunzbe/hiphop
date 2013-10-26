@@ -68,6 +68,7 @@ module.exports = function(grunt) {
   });
   // Default task.
   grunt.registerTask('default', ['jshint','tap']);
+  grunt.registerTask('test', ['tap']);
 
 
 };

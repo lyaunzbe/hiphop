@@ -3,11 +3,7 @@ hiphop
 
 Create your very own rapper! Powered by Rap Genius 
 
-## example
-
 # Hiphop
-
-## h.getRoster()
 
 ## h.showtime([artists], callback)
 
@@ -15,16 +11,26 @@ Create your very own rapper! Powered by Rap Genius
 
 ## h.rm(artists)
 
+## h.roster()
+
 # Rapper
 
 ## r.about()
 
 ## r.songs()
 
-## r.getSong(songs, cb)
-
 ## r.jams()
 
-# Songs
+## r.albums()
 
-# Albums
+## r.search()
+
+## h.getSong(songs, [callback])
+
+# Song
+
+## r.title()
+
+## r.url()
+
+## r.lyrics()
